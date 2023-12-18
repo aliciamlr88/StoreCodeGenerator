@@ -4,37 +4,37 @@ export let SIZES: Size[] = [
     {
         id: '1',
         code: '0000',
-        text: 'ONESIZE'
+        name: 'ONESIZE'
     },
     {
         id: '2',
         code: '0030',
-        text: 'XSMALL'
+        name: 'XSMALL'
     },
     {
         id: '3',
         code: '0040',
-        text: 'SMALL'
+        name: 'SMALL'
     },
     {
         id: '4',
         code: '0050',
-        text: 'MEDIUM'
+        name: 'MEDIUM'
     },
     {
         id: '5',
         code: '0060',
-        text: 'LARGE'
+        name: 'LARGE'
     },
     {
         id: '6',
         code: '0070',
-        text: 'XLARGE'
+        name: 'XLARGE'
     },
     {
         id: '7',
         code: '0080',
-        text: 'XXLARGE'
+        name: 'XXLARGE'
     }
    
-]
+];
