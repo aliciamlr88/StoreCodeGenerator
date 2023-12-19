@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-bar-code',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./bar-code.component.css']
 })
 export class BarCodeComponent {
-
+  @Input() product: Product ;
 }

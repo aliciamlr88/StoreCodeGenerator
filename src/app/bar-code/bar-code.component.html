@@ -1,1 +1,6 @@
-<ejs-barcodegenerator id="barcode" width="200px" height="150px" mode="SVG" type="Codabar" value="123456789">
+<ngx-barcode6
+    [bc-format]="'CODE128'"
+    [bc-value]='product.code'
+    [bc-display-value]="true"
+  >
+</ngx-barcode6>

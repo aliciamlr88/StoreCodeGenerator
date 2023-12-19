@@ -9,7 +9,7 @@ export let COLORS: Color[] = [
     },
     {
         id: '2',
-        code: '62',
+        code: '062',
         name: 'CAPERS',
         htmlCode: '#5b5d51'
     },

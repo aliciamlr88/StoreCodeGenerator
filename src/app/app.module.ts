@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CodeGeneratorComponent } from './code-generator/code-generator.component';
 import { BarCodeComponent } from './bar-code/bar-code.component'; 
-import { BarcodeGeneratorAllModule } from '@syncfusion/ej2-angular-barcode-generator';
+import { NgxBarcode6Module } from 'ngx-barcode6';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { BarcodeGeneratorAllModule } from '@syncfusion/ej2-angular-barcode-gener
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BarcodeGeneratorAllModule
+    NgxBarcode6Module
   ],
   providers: [],
   bootstrap: [AppComponent]

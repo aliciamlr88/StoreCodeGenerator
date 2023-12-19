@@ -35,7 +35,8 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subs = [this.getSubSize, this.createSub, this.getSubColor];
-
+    this.getSizes();
+    this.getColors();
   }
 
 
@@ -64,8 +65,11 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
       return;
     }
      
-    this.productForm = this.productForm.value;
+    this.product = this.productForm.value;
 
+    this.isValidFormSubmitted = true;
+
+    this.generateCode();
     // generate  barcode
   }
 
@@ -82,7 +86,37 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
     return this.productForm.get('size');
   }
 
- 
+  
+  private getSizes(): void {
+
+    this.getSubSize = this.codeGeneratorService.getSizes().subscribe(
+      sizes => {
+        this.sizes = sizes;
+        if(sizes.length == 0){
+          this.message = "No sizes were found";
+        }
+      }
+    );
+  }
+
+  private getColors(): void {
+
+    this.getSubColor = this.codeGeneratorService.getColors().subscribe(
+      colors => {
+        this.colors = colors;
+        if(colors.length == 0){
+          this.message = "No colors were found";
+        }
+      }
+    );
+  }
+
+
+  private generateCode(): void{
+    this.product.code = this.product.department+this.product.style+this.product.color+'00'+this.product.size;
+   
+    
+  }
 
  
 }

@@ -1,1 +1,73 @@
-<p>code-generator works!</p>
+<div class="row mx-auto">
+    <div class="col align-self-center col-sm-12 col-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">Code Generator</div>
+            <div class="card-body">
+                <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label>Department:<br /></label>
+                        <input formControlName="department" type="text" [ngClass]="((department?.errors?.['required'] || department?.errors?.['minlength'] || department?.errors?.['maxlength']) 
+                          && !isValidFormSubmitted 
+                          && submitted) ? 'form-control is-invalid' : 'form-control is-valid'" />
+                        <div *ngIf="!((department?.errors?.['required'] || department?.errors?.['minlength'] || department?.errors?.['maxlength']) 
+              && !isValidFormSubmitted 
+              && submitted)" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="((department?.errors?.['required'] || department?.errors?.['minlength'] || department?.errors?.['maxlength']) 
+                          && !isValidFormSubmitted 
+                          && submitted)" class="invalid-feedback">
+                            {{department?.errors?.['required'] ?
+                            'Department is required' :
+                            department?.errors?.['minlength'] ? 'Min Length is ' +
+                            department?.errors?.['minlength'].requiredLength :
+                            department?.errors?.['maxlength'] ? 'Max Length is ' +
+                            department?.errors?.['maxlength'].requiredLength : ''}}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Style:<br /></label>
+                        <input formControlName="style" type="text" [ngClass]="((style?.errors?.['required'] || style?.errors?.['minlength'] || style?.errors?.['maxlength']) 
+                          && !isValidFormSubmitted 
+                          && submitted) ? 'form-control is-invalid' : 'form-control is-valid'" />
+                        <div *ngIf="!((style?.errors?.['required'] || style?.errors?.['minlength'] || style?.errors?.['maxlength']) 
+              && !isValidFormSubmitted 
+              && submitted)" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="((style?.errors?.['required'] || style?.errors?.['minlength'] || style?.errors?.['maxlength']) 
+                          && !isValidFormSubmitted 
+                          && submitted)" class="invalid-feedback">
+                            {{style?.errors?.['required'] ?
+                            'Style is required' :
+                            style?.errors?.['minlength'] ? 'Min Length is ' +
+                            style?.errors?.['minlength'].requiredLength :
+                            style?.errors?.['maxlength'] ? 'Max Length is ' +
+                            style?.errors?.['maxlength'].requiredLength : ''}}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Color:<br /></label>
+                        <select formControlName="color" class="form-select" aria-label="Default select example">
+                            <option disabled selected>Select the color</option>
+                            <option  *ngFor="let color of colors" [ngValue]="color.code" >{{color.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Size: <br /></label>
+                        <select formControlName="size" class="form-select" aria-label="Default select example">
+                            <option disabled selected>Select a Size</option>
+                            <option *ngFor="let size of sizes" [ngValue]="size.code" >{{size.name}}</option>
+                        </select>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Generate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-bar-code  [product]="product" *ngIf="product.code"  ></app-bar-code>
