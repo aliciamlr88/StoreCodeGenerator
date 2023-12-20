@@ -47,8 +47,8 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
   }
 
   productForm: FormGroup = new FormGroup({
-    department: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]),
-    style: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
+    department: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern("^[0-9]*$")]),
+    style: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern("^[0-9]*$")]),
     color: new FormControl('', [Validators.required]),
     size: new FormControl('', [Validators.required])
   });
@@ -60,12 +60,17 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
     this.isValidFormSubmitted = false;
 
     this.submitted = true;
-
+    
     if (this.productForm.invalid){
+    
       return;
     }
+
+   
      
     this.product = this.productForm.value;
+
+   
 
     this.isValidFormSubmitted = true;
 
