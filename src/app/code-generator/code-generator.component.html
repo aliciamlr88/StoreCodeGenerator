@@ -6,11 +6,12 @@
                 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
                     <div class="mb-3">
                         <label class="fw-normal mb-1" for="departmentID">Department:</label>
-                        <input id="departmentID" autofocus formControlName="department" type="text" placeholder="Department Number"
+                        <input id="departmentID" autofocus formControlName="department" type="text"
+                            placeholder="Department Number"
                             [ngClass]="(
                             department?.errors && (!isValidFormSubmitted
                              &&  (department.touched ||  submitted) )) ? 'form-control is-invalid' : 'form-control is-valid'" />
-                             
+
                         <div *ngIf="!(department?.errors 
                                 && !isValidFormSubmitted 
                                 && (department.touched || submitted))" class="valid-feedback">
@@ -65,13 +66,17 @@
                     </div>
                     <div class="mb-3">
                         <label class="fw-normal mb-1" for="colorID">Color:<br /></label>
-                        <select id="colorID" formControlName="color" [ngClass]="(color?.errors
+                        <ng-select id="colorID" formControlName="color" [ngClass]="(color?.errors
                         && !isValidFormSubmitted 
-                        && (color.touched ||  submitted)) ? 'form-select is-invalid' : 'form-select is-valid'"
-                            aria-label="Select">
-                            <option value="" disabled selected>Select the color</option>
-                            <option *ngFor="let color of colors" [ngValue]="color.code">{{color.name}}</option>
-                        </select>
+                        && (color.touched ||  submitted)) ? 'form-control is-invalid' : 'form-control is-valid'">
+                            <ng-option value="" disabled selected>Select a Color</ng-option>
+                            <ng-option *ngFor="let color of colors" [value]="color.code">
+                                <div class="color-circle-wrapper">
+                                    <div class="color-circle" [style.backgroundColor]="color.htmlCode"></div>
+                                    <div>{{color.name}}</div>
+                                </div>
+                            </ng-option>
+                        </ng-select>
                         <div *ngIf="!(color?.errors
                         && !isValidFormSubmitted 
                         &&  (color.touched ||  submitted))" class="valid-feedback">
@@ -88,13 +93,14 @@
 
                     <div class="mb-3">
                         <label class="fw-normal mb-1" for="sizeID">Size: <br /></label>
-                        <select id="sizeID" formControlName="size" [ngClass]="(size?.errors
+                        <ng-select id="sizeID" formControlName="size" [ngClass]="(size?.errors
                         && !isValidFormSubmitted 
-                        && (size.touched ||  submitted)) ? 'form-select is-invalid' : 'form-select is-valid'"
-                            aria-label="Select">
-                            <option value="" disabled selected>Select a Size</option>
-                            <option *ngFor="let size of sizes" [ngValue]="size.code">{{size.name}}</option>
-                        </select>
+                        && (size.touched ||  submitted)) ? 'form-control is-invalid' : 'form-control is-valid'">
+                            <ng-option value="" disabled selected>Select a Size</ng-option>
+                            <ng-option *ngFor="let size of sizes" [value]="size.code">{{size.name}}</ng-option>
+
+                        </ng-select>
+
                         <div *ngIf="!(size?.errors
                         && !isValidFormSubmitted 
                         &&  (size.touched || submitted))" class="valid-feedback">

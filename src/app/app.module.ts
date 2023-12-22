@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CodeGeneratorComponent } from './code-generator/code-generator.component';
 import { BarCodeComponent } from './bar-code/bar-code.component'; 
 import { NgxBarcode6Module } from 'ngx-barcode6';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgxBarcode6Module } from 'ngx-barcode6';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxBarcode6Module
+    NgxBarcode6Module,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
