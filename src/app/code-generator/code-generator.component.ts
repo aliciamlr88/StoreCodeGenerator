@@ -18,15 +18,15 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
   public sizes: Size[] = [];
   public isValidFormSubmitted: boolean = false;
   public submitted: boolean = false;
-  public message: string ;
-  
+  public message: string;
+
   /**
    * A subscription so we can unsubscribe
    */
   private getSubSize: Subscription;
   private getSubColor: Subscription;
   private createSub: Subscription;
-  
+
 
   private subs: Subscription[];
 
@@ -60,17 +60,17 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
     this.isValidFormSubmitted = false;
 
     this.submitted = true;
-    
-    if (this.productForm.invalid){
-    
+
+    if (this.productForm.invalid) {
+
       return;
     }
 
-   
-     
+
+
     this.product = this.productForm.value;
 
-   
+
 
     this.isValidFormSubmitted = true;
 
@@ -91,13 +91,13 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
     return this.productForm.get('size');
   }
 
-  
+
   private getSizes(): void {
 
     this.getSubSize = this.codeGeneratorService.getSizes().subscribe(
       sizes => {
         this.sizes = sizes;
-        if(sizes.length == 0){
+        if (sizes.length == 0) {
           this.message = "No sizes were found";
         }
       }
@@ -109,7 +109,7 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
     this.getSubColor = this.codeGeneratorService.getColors().subscribe(
       colors => {
         this.colors = colors;
-        if(colors.length == 0){
+        if (colors.length == 0) {
           this.message = "No colors were found";
         }
       }
@@ -117,12 +117,12 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
   }
 
 
-  private generateCode(): void{
-    this.product.code = this.product.department+this.product.style+this.product.color+'00'+this.product.size;
-   
-    
+  private generateCode(): void {
+    this.product.code = this.product.department + this.product.style + this.product.color + '00' + this.product.size;
+
+
   }
 
- 
+
 }
 
