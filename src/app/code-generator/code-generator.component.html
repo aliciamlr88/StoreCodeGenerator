@@ -42,8 +42,8 @@
                           && !isValidFormSubmitted 
                           && (style.touched ||  submitted)) ? 'form-control is-invalid' : 'form-control is-valid'" />
                         <div *ngIf="!(style?.errors 
-              && !isValidFormSubmitted 
-              &&  (style.touched ||  submitted))" class="valid-feedback">
+                        && !isValidFormSubmitted 
+                        &&  (style.touched ||  submitted))" class="valid-feedback">
                             Looks good!
                         </div>
                         <div *ngIf="(style?.errors
@@ -66,7 +66,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="fw-normal mb-1" for="colorID">Color:<br /></label>
-                        <ng-select id="colorID" formControlName="color" [ngClass]="(color?.errors
+                        <ng-select class="custom" id="colorID" formControlName="color" [ngClass]="(color?.errors
                         && !isValidFormSubmitted 
                         && (color.touched ||  submitted)) ? 'form-control is-invalid' : 'form-control is-valid'">
                             <ng-option value="" disabled selected>Select a Color</ng-option>
@@ -93,7 +93,7 @@
 
                     <div class="mb-3">
                         <label class="fw-normal mb-1" for="sizeID">Size: <br /></label>
-                        <ng-select id="sizeID" formControlName="size" [ngClass]="(size?.errors
+                        <ng-select class="custom" id="sizeID" formControlName="size" [ngClass]="(size?.errors
                         && !isValidFormSubmitted 
                         && (size.touched ||  submitted)) ? 'form-control is-invalid' : 'form-control is-valid'">
                             <ng-option value="" disabled selected>Select a Size</ng-option>
