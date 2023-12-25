@@ -8,4 +8,5 @@ export class Product {
     public color: string;
     public size: string;
     public code: string;
+    public imageUrl: string;
 }
