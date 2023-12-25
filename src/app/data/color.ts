@@ -1,4 +1,4 @@
-export let COLORS: any = [
+export let COLORS: any =[
     {
         "id": 1,
         "code": "907",
@@ -118,5 +118,89 @@ export let COLORS: any = [
         "code": "304",
         "name": "AUBERGINE",
         "htmlCode": "#655256"
+    },
+    {
+        "id": 21,
+        "code": "662",
+        "name": "DK OLIVE",
+        "htmlCode": "#4c6049"
+    },
+    {
+        "id": 22,
+        "code": "225",
+        "name": "LT KHAKI",
+        "htmlCode": "#d4c1a7"
+    },
+    {
+        "id": 23,
+        "code": "492",
+        "name": "PAPRIKA",
+        "htmlCode": "#af5138"
+    },
+    {
+        "id": 24,
+        "code": "405",
+        "name": "INDIGO",
+        "htmlCode": "#203348"
+    },
+    {
+        "id": 25,
+        "code": "473",
+        "name": "TWILITE",
+        "htmlCode": "#515c6d"
+    },
+    {
+        "id": 26,
+        "code": "537",
+        "name": "DK LODEN",
+        "htmlCode": "#464543"
+    },
+    {
+        "id": 27,
+        "code": "557",
+        "name": "HAZELNUT",
+        "htmlCode": "#a27048"
+    },
+    {
+        "id": 28,
+        "code": "315",
+        "name": "DUSTED INDIGO",
+        "htmlCode": "#475c82"
+    },
+    {
+        "id": 29,
+        "code": "150",
+        "name": "PUMICE",
+        "htmlCode": "#e4d7c4"
+    },
+    {
+        "id": 30,
+        "code": "123",
+        "name": "DK CHARCOAL HTR",
+        "htmlCode": "#4e4e50"
+    },
+    {
+        "id": 31,
+        "code": "045",
+        "name": "ATLANTIC",
+        "htmlCode": "#464c63"
+    },
+    {
+        "id": 32,
+        "code": "642",
+        "name": "HUNTER",
+        "htmlCode": "#705535"
+    },
+    {
+        "id": 33,
+        "code": "361",
+        "name": "PEACOCK",
+        "htmlCode": "#00415d"
+    },
+    {
+        "id": 34,
+        "code": "606",
+        "name": "ALOE",
+        "htmlCode": "#a6c4b5"
     }
 ];
