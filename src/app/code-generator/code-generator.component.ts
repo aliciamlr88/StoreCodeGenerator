@@ -119,8 +119,7 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
 
   private generateCode(): void {
     this.product.code = this.product.department + this.product.style + this.product.color + '00' + this.product.size;
-    this.product.imageUrl =  "https://eddiebauer.scene7.com/is/image/EddieBauer/D"+this.product.department+this.product.style+"_"+this.product.color+"C1?$328V1$"
-
+   
 
   }
 
