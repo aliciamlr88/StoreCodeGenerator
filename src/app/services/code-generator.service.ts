@@ -5,11 +5,12 @@ import { COLORS } from '../data/color';
 import { SIZES } from '../data/size';
 import { Observable, of } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CodeGeneratorService {
-
+ 
   private sizes: Size[] = SIZES;
   private colors: Color[] = COLORS;
 

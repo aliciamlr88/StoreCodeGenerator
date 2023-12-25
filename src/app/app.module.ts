@@ -9,6 +9,8 @@ import { BarCodeComponent } from './bar-code/bar-code.component';
 import { NgxBarcode6Module } from 'ngx-barcode6';
 import { NgSelectModule } from '@ng-select/ng-select';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
