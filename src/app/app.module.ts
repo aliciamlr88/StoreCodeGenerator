@@ -8,7 +8,7 @@ import { CodeGeneratorComponent } from './code-generator/code-generator.componen
 import { BarCodeComponent } from './bar-code/bar-code.component'; 
 import { NgxBarcode6Module } from 'ngx-barcode6';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -27,7 +27,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     NgSelectModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: PathLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
