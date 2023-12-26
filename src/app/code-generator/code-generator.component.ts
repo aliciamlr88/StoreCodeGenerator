@@ -119,8 +119,6 @@ export class CodeGeneratorComponent implements OnInit, OnDestroy {
 
   private generateCode(): void {
     this.product.code = this.product.department + this.product.style + this.product.color + '00' + this.product.size;
-   
-
   }
 
 
