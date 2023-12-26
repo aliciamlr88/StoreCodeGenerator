@@ -1,8 +1,13 @@
 <div class="row">
     <div class="col align-self-center col-sm-12 col-md-6 mx-auto">
+            
         <div class="card border-dark">
             <div class="card-header bg-dark text-white">Code Generator</div>
             <div class="card-body">
+                <div *ngIf="product.code" class="text-center">
+                    <app-bar-code [product]="product" *ngIf="product.code"></app-bar-code>
+                </div>
+     
                 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
                     <div class="mb-3">
                         <label class="fw-normal mb-1" for="departmentID">Department:</label>
@@ -119,9 +124,6 @@
                 </form>
 
                 
-            </div>
-            <div *ngIf="product.code" class="card-footer mx-auto">
-                <app-bar-code [product]="product" *ngIf="product.code"></app-bar-code>
             </div>
            
         </div>
