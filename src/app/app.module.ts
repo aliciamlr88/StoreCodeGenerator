@@ -8,6 +8,7 @@ import { CodeGeneratorComponent } from './code-generator/code-generator.componen
 import { BarCodeComponent } from './bar-code/bar-code.component'; 
 import { NgxBarcode6Module } from 'ngx-barcode6';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -25,7 +26,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     NgxBarcode6Module,
     NgSelectModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
