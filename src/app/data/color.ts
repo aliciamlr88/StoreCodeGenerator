@@ -1512,6 +1512,18 @@ export let COLORS: any = [
         "code": "355",
         "name": "PALE LAVENDER",
         "htmlCode": "#d8c2c0"
+    },
+    {
+        "id": 253,
+        "code": "254",
+        "name": "BLUE SPRUCE",
+        "htmlCode": "#0f2677"
+    },
+    {
+        "id": 254,
+        "code": "636",
+        "name": "MISTY BLUE",
+        "htmlCode": "#64bbe4"
     }
 
 
