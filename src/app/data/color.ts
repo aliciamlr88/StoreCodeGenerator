@@ -1524,7 +1524,13 @@ export let COLORS: any = [
         "code": "636",
         "name": "MISTY BLUE",
         "htmlCode": "#64bbe4"
-    }
+    },
+    {
+        "id": 255,
+        "code": "655",
+        "name": "CACTUS",
+        "htmlCode": "#e2f09b"
+    },
 
 
 
